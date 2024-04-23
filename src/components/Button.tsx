@@ -1,12 +1,13 @@
-import { useState } from "react";
+import { ReactNode, useState } from "react";
 import { twMerge } from "tailwind-merge";
 
 interface ButtonProps {
-  children: string;
+  children: ReactNode;
   className?: string;
+  onClick?: () => void;
 }
 
-function Button({ children, className }: ButtonProps) {
+function Button({ children, className, onClick }: ButtonProps) {
   const [isHovered, setIsHovered] = useState(false);
   const handleMouseEnter = () => {
     setIsHovered(true);
@@ -21,25 +22,24 @@ function Button({ children, className }: ButtonProps) {
     border-midnight 
     border-2 
     rounded-full 
-    w-fit 
-    bg-amber
+    bg-amber 
     ${
       isHovered
         ? "animate-[bounce-in_0.4s_ease-in-out_forwards]"
         : "animate-[bounce-out_0.4s_ease-in-out_forwards]"
     }
+    active:animate-[bounce-out_0.4s_ease-in-out_forwards] 
     ${className}
   `);
   return (
-    <div className="h-12 flex justify-center items-center">
-      <button
-        className={classes}
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
-      >
-        {children}
-      </button>
-    </div>
+    <button
+      className={classes}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+      onClick={onClick}
+    >
+      {children}
+    </button>
   );
 }
 

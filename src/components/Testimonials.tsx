@@ -1,4 +1,4 @@
-import React from "react";
+import Heading3 from "./Heading3";
 
 function Testimonials() {
   const list = [
@@ -20,22 +20,24 @@ function Testimonials() {
     },
   ];
   return (
-    <div className="bg-midnight text-white px-14 py-16 flex gap-5 flex-col">
-      <h3 className="font-title text-4xl">
-        Find out why we’re the ultimate virtual assistant service provider.
-      </h3>
-      <p>
-        The #1 virtual assistant service provider that delivers unparalleled
-        results for individuals and businesses seeking efficient support.
-      </p>
-      {list.map((item) => {
-        return (
-          <div className="my-3 px-10">
-            <h4 className="text-xl font-semibold mb-1">{item.first}</h4>
-            <p>{item.second}</p>
-          </div>
-        );
-      })}
+    <div className="bg-midnight text-white px-16 py-20 flex flex-col gap-10">
+      <div>
+        <Heading3>Find out why we’re best-in-class</Heading3>
+        <p className="mt-5">
+          The #1 virtual assistant service provider that delivers unparalleled
+          results for individuals and businesses seeking efficient support.
+        </p>
+      </div>
+      <div className="flex flex-wrap gap-7">
+        {list.map((item) => {
+          return (
+            <div className="px-10" key={item.first}>
+              <h4 className="text-lg font-semibold mb-1">{item.first}</h4>
+              <p className="text-[.95em]">{item.second}</p>
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 }

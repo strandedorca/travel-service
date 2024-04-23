@@ -35,30 +35,46 @@ export default {
       butter: "#fbeeca",
       amber: "#e7b760",
       sage: "#43584d",
+      grey: "#f0f2f4",
     },
 
     keyframes: {
+      "turn-white": {
+        from: {
+          "background-color": "transparent",
+        },
+        to: {
+          "background-color": "white",
+        },
+      },
+      "turn-transparent": {
+        from: {
+          "background-color": "white",
+        },
+        to: {
+          "background-color": "transparent",
+        },
+      },
       "bounce-in": {
         "50%": {
-          "border-bottom": "10px solid black",
-          transform: "translateY(-10px)",
+          "box-shadow": "black 0px 7px 0px 0px",
+          transform: "translateY(-7px)",
         },
         "100%": {
-          "border-bottom": "7px solid black",
-          transform: "translateY(-7px)",
+          "box-shadow": "black 0px 5px 0px 0px",
+          transform: "translateY(-5px)",
         },
       },
       "bounce-out": {
         "0%": {
-          "border-bottom": "7px solid black",
-          transform: "translateY(-7px)",
+          "box-shadow": "black 0px 5px 0px 0px",
+          transform: "translateY(-5px)",
         },
         "50%": {
           "border-bottom": "2px solid black",
-          transform: "translateY(4px)",
+          transform: "translateY(2px)",
         },
         "100%": {
-          "border-bottom": "2px solid black",
           transform: "translateY(0px)",
         },
       },
