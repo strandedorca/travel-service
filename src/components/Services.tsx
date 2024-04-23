@@ -1,13 +1,15 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Heading3 from "./Heading3";
 
-interface ScreenshotProps {
+interface ServicesProps {
   goal: string;
 }
 
-function Screenshot({ goal }: ScreenshotProps) {
+function Services({ goal }: ServicesProps) {
   const services = [
     {
       goal: "productivity",
+      title: "Increase productivity with...",
       services: [
         "Time management assistance",
         "Task prioritization guidance",
@@ -23,6 +25,7 @@ function Screenshot({ goal }: ScreenshotProps) {
     },
     {
       goal: "streamline",
+      title: "Streamline tasks with...",
       services: [
         "Automation of repetitive tasks",
         "Standard operating procedure (SOP) creation",
@@ -38,6 +41,7 @@ function Screenshot({ goal }: ScreenshotProps) {
     },
     {
       goal: "welcome",
+      title: "Welcome client with...",
       services: [
         "Client onboarding assistance",
         "Personalized welcome packages creation",
@@ -53,6 +57,7 @@ function Screenshot({ goal }: ScreenshotProps) {
     },
     {
       goal: "organization",
+      title: "Stay organized with...",
       services: [
         "Digital and physical workspace organization",
         "Filing system setup and maintenance",
@@ -68,24 +73,26 @@ function Screenshot({ goal }: ScreenshotProps) {
     },
   ];
   return (
-    <div className="bg-sage text-white">
-      {/* {services.filter((goal) => goal === goal)}; */}
-      {/* {services.map((goal) => {
-        return (
-          <>
-            <Heading3>
-              {goal.goal[0].toUpperCase() + goal.goal.slice(1)}
-            </Heading3>
-            <ul className="list-disc">
-              {goal.services.map((service) => (
-                <li>{service}</li>
-              ))}
-            </ul>
-          </>
-        );
-      })} */}
+    <div className="bg-sage text-white p-16">
+      {services
+        .filter((item) => item.goal === goal)
+        .map((goal) => {
+          return (
+            <>
+              <Heading3>{goal.title}</Heading3>
+              <ul className="list-inside mt-10">
+                {goal.services.map((service) => (
+                  <li className="mt-3 ml-6">
+                    <FontAwesomeIcon icon="circle-check" className="mr-5" />
+                    {service}
+                  </li>
+                ))}
+              </ul>
+            </>
+          );
+        })}
     </div>
   );
 }
 
-export default Screenshot;
+export default Services;

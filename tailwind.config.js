@@ -39,6 +39,14 @@ export default {
     },
 
     keyframes: {
+      "bounce-horizontally": {
+        from: {
+          transform: "translate(0)",
+        },
+        to: {
+          transform: "translateX(5px)",
+        },
+      },
       "turn-white": {
         from: {
           "background-color": "transparent",

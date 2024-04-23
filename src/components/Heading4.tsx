@@ -8,7 +8,7 @@ interface Heading4Props {
 function Heading4({ children, className }: Heading4Props) {
   const classes = twMerge(`
     font-title 
-    text-2xl 
+    text-3xl 
     font-semibold 
     mb-1 
     ${className} 

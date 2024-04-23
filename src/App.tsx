@@ -4,7 +4,7 @@ import Features from "./components/Features.tsx";
 import Goals from "./components/Goals.tsx";
 import Header from "./components/Header.tsx";
 import Hero from "./components/Hero.tsx";
-import Screenshot from "./components/Screenshot.tsx";
+import Services from "./components/Services.tsx";
 import Testimonials from "./components/Testimonials.tsx";
 import "./fontawesome.ts";
 import Notice from "./components/Notice.tsx";
@@ -59,7 +59,7 @@ function App() {
         <Goals onChooseGoal={handleChooseGoal} />
       </div>
       <div className="screenshot">
-        <Screenshot goal={chosenGoal} />
+        <Services goal={chosenGoal} />
       </div>
       <div className="features">
         <Features />

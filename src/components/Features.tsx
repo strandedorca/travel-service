@@ -43,14 +43,18 @@ function Features() {
   ];
   return (
     <div className="p-14 flex flex-col gap-10">
-      <Heading3>We’re the #1 virtual assistant solution for a reason.</Heading3>
+      <div className="text-center">
+        <Heading3>
+          We’re the #1 virtual assistant solution for a reason.
+        </Heading3>
+      </div>
       {features.map((item) => {
         return (
           <div key={item.title} className="flex flex-col gap-3">
             <Heading4>{item.title}</Heading4>
             <p>{item.content}</p>
             <SlidingButton>{item.button}</SlidingButton>
-            <div className="w-full flex justify-center items-center">
+            <div className="my-8 w-full flex justify-center items-center">
               <img className="w-[400px] h-auto" src={item.src} alt={item.alt} />
             </div>
           </div>
